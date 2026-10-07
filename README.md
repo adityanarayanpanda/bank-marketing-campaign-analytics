@@ -5,9 +5,8 @@
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1.svg?logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![Power BI](https://img.shields.io/badge/Power%20BI-Desktop-F2C811.svg?logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
 [![Excel](https://img.shields.io/badge/Excel-Power%20Query-217346.svg?logo=microsoftexcel&logoColor=white)](https://www.microsoft.com/excel)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **End-to-End Data Analytics Project** analyzing bank marketing campaign performance and term-deposit subscription behavior across **41,176 records**. Combining **Excel, Power Query, MySQL, Python, Statistics, and Power BI** to transform raw interactions into actionable business strategy and a **90-Day Action Plan**.
+> **End-to-End Data Analytics Project** analyzing bank marketing campaign performance and term-deposit subscription behavior across **41,176 campaign records**. Combining **Excel, Power Query, MySQL, Python, Statistics, and Power BI** to transform raw campaign interaction data into actionable business insights, strategic recommendations, and an operational **90-Day Action Plan**.
 
 ---
 
@@ -15,67 +14,68 @@
 
 - [Project Overview](#-project-overview)
 - [Key Business Questions](#-key-business-questions)
-- [Key Results & Metrics](#-key-results)
-- [Dataset Architecture](#-dataset)
+- [Key Results](#-key-results)
+- [Dataset](#-dataset)
 - [Project Workflow](#-project-workflow)
-- [1. Data Cleaning & Preparation (Excel & Power Query)](#1-data-cleaning--preparation)
+- [1. Data Cleaning & Preparation](#1-data-cleaning--preparation)
 - [2. MySQL & SQL Analysis](#2-mysql--sql-analysis)
-- [3. Python Exploratory Data Analysis & Statistics](#3-python-analysis)
-- [4. Power BI Interactive Dashboard (4 Pages)](#4-power-bi-dashboard)
+- [3. Python Analysis](#3-python-analysis)
+- [4. Power BI Dashboard](#4-power-bi-dashboard)
 - [Key Business Insights](#-key-business-insights)
-- [Critical Analytical Notice (Data Leakage)](#-important-analytical-consideration)
-- [Strategic Business Recommendations](#-business-recommendations)
+- [Important Analytical Consideration](#-important-analytical-consideration)
+- [Strategic Business Recommendations](#-strategic-business-recommendations)
 - [🗓️ 90-Day Action Plan](#️-90-day-action-plan)
-- [Repository File Structure](#-repository-structure)
+- [Repository Structure](#-repository-structure)
 - [Tools & Technologies](#️-tools--technologies)
 - [Skills Demonstrated](#-skills-demonstrated)
-- [Author & Contact](#-author)
+- [Author](#-author)
 
 ---
 
 ## 🎯 Project Overview
 
-Bank marketing campaigns generate massive volumes of customer contact and campaign interaction data. Understanding which customer segments are more likely to subscribe, which communication channels perform better, and how repeated contacts impact conversion can drastically improve marketing ROI, reduce customer fatigue, and lower operational overhead.
+Bank marketing campaigns generate large amounts of customer and campaign interaction data. Understanding which customer segments are more likely to subscribe, which contact methods perform better, and how repeated contacts affect conversion can help improve campaign efficiency, reduce customer fatigue, and lower operational overhead.
 
-This project analyzes the **Bank Marketing dataset** from the UCI Machine Learning Repository to derive data-driven answers to core commercial banking challenges.
+This project analyzes the **Bank Marketing dataset** from the UCI Machine Learning Repository to evaluate telemarketing performance and identify patterns associated with term-deposit subscription.
 
 ### ❓ Key Business Questions
 
-- **Overall Conversion:** What is the baseline campaign conversion rate?
-- **Customer Segmentation:** Which demographics (age, job, marital, education, loans) convert at the highest rate?
-- **Channel Optimization:** Does cellular contact outperform traditional landline telephone contact?
-- **Contact Fatigue:** At what contact frequency does customer response diminish?
-- **Historical Propensity:** Does a successful outcome in a prior campaign predict future subscription?
-- **Campaign Timing:** Which months and weekdays generate the highest conversion density?
-- **Macroeconomic Correlation:** How do interest rates (Euribor 3M) and employment trends influence financial commitment?
-- **Actionable Execution:** What strategic interventions will maximize campaign conversion for the next 90 days?
+- **Overall Conversion:** What is the overall campaign conversion rate?
+- **Customer Segmentation:** Which customer segments show higher subscription rates?
+- **Contact Method:** Which contact method performs better?
+- **Repeated Contacts:** How does repeated campaign contact affect conversion?
+- **Previous Campaign History:** Does previous campaign success influence future subscriptions?
+- **Campaign Timing:** Which days and months show stronger campaign performance?
+- **Economic Indicators:** How do economic indicators relate to campaign conversion?
+- **Actionable Execution:** What strategic actions can improve future campaign performance?
 
 ---
 
 ## 📌 Key Results
 
-| Metric | Analytical Result | Business Significance |
+| Metric | Result | Analytical Significance |
 |---|---:|---|
-| **Cleaned Campaign Records** | **41,176** | Verified, deduplicated analytical universe |
-| **Successful Subscriptions** | **4,639** | Total term-deposit contracts secured |
-| **Overall Conversion Rate** | **11.27%** | Portfolio baseline subscription rate |
-| **Previous Campaign Contacts** | **7,124** | Customers with past historical outreach |
-| **Average Call Duration** | **258 sec** (~4.3 min) | Descriptive indicator of customer engagement |
-| **Total Campaign Contacts** | **105,735** | Cumulative sales contacts logged |
-| **Cellular vs. Telephone Conversion** | **14.7% vs. 5.2%** | **~2.8x higher** conversion on mobile channels |
-| **Prior Campaign Success Conversion** | **65.1%** | **~6x higher** conversion than overall baseline |
-| **1-2 Contacts Conversion** | **12.5%** | Highest response window before diminishing returns |
-| **Low Euribor (< 1.5%) Conversion** | **23.4%** | Favorable rate environment drives savings interest |
+| **Cleaned Campaign Records** | **41,176** | Verified analytical dataset after duplicate removal |
+| **Successful Subscriptions** | **4,639** | Term-deposit subscriptions recorded |
+| **Overall Conversion Rate** | **11.27%** | Baseline campaign conversion rate |
+| **Previous Campaign Contacts** | **7,124** | Campaign records with previous contact history |
+| **Average Call Duration** | **258 sec** | Descriptive indicator of contact length (~4.3 min) |
+| **Total Campaign Contacts** | **105,735** | Cumulative campaign contacts across records |
+| **Cellular Conversion Rate** | **~14.7%** | Observed conversion via cellular channel |
+| **Telephone Conversion Rate** | **~5.2%** | Observed conversion via fixed telephone channel |
+| **Previous Campaign Success Conversion** | **~65.11%** | Highest observed subscription rate among outcome categories |
 
 ---
 
 ## 🗂️ Dataset
 
 The project uses the **Bank Marketing Dataset** from the **UCI Machine Learning Repository**:
-- **Source:** [UCI Machine Learning Repository - Bank Marketing](https://archive.ics.uci.edu/dataset/222/bank%2Bmarketing)
-- **Institution:** Portuguese banking institution direct marketing campaigns (telemarketing)
-- **Original Dimensions:** 41,188 records × 21 attributes (20 input features + 1 target variable)
-- **Post-Cleaning Analytical Dataset:** **41,176 verified records** (12 duplicate records removed, zero synthetic padding)
+- **Dataset Source:** [UCI Machine Learning Repository - Bank Marketing](https://archive.ics.uci.edu/dataset/222/bank%2Bmarketing)
+- **Original Dimensions:** 41,188 records × 21 variables (20 input features + 1 target variable)
+- **Data Preparation:** 12 exact duplicate records identified and removed
+- **Final Analytical Dataset:** **41,176 campaign records**
+
+> *Note on Terminology:* The dataset does not contain a unique customer identifier. Records represent campaign contacts/interactions rather than confirmed unique individuals.
 
 ### Target Variable
 
@@ -83,28 +83,28 @@ The project uses the **Bank Marketing Dataset** from the **UCI Machine Learning 
 |---|---|---|
 | `subscribed` (`y`) | `yes` (4,639) / `no` (36,537) | Has the client subscribed to a term deposit? |
 
+> The raw dataset is not included in this repository. Please use the official UCI source to obtain the original dataset.
+
 ---
 
 ## 🔄 Project Workflow
 
 ```text
-                 Raw Bank Marketing Dataset (UCI)
+                 Raw Bank Marketing Dataset
                             │
                             ▼
                   Excel / Power Query
                             │
                   Data Cleaning & Validation
-               (Deduplication, NULL check, Dtypes)
                             │
                             ▼
-                    Cleaned Dataset (41,176)
+                    Clean Dataset (41,176)
                             │
               ┌─────────────┴─────────────┐
               ▼                           ▼
-          MySQL / SQL                  Python (Pandas / Seaborn)
+          MySQL / SQL                   Python
               │                           │
-       Business Analysis          EDA & Statistical Testing
-       (Aggregations, CASE)        (Distributions, Leakage Check)
+       Business Analysis          EDA & Statistics
               │                           │
               └─────────────┬─────────────┘
                             ▼
@@ -112,50 +112,64 @@ The project uses the **Bank Marketing Dataset** from the **UCI Machine Learning 
                             │
                             ▼
                  Microsoft Power BI
-               (4-Page Executive Dashboard)
+               (4-Page Interactive Dashboard)
                             │
                             ▼
-            Strategic Recommendations & 90-Day Plan
+            Recommendations & 90-Day Action Plan
 ```
 
 ---
 
 ## 🧹 1. Data Cleaning & Preparation
 
-**Tools Used:** Microsoft Excel & Power Query
+**Tools:** Microsoft Excel + Power Query
+
+The raw dataset was prepared before analytical processing.
 
 ### Data Preparation Steps
-1. **Deduplication:** Identified and purged 12 identical duplicate records (41,188 → 41,176).
-2. **Data Type Standardization:** Enforced explicit schema types (`INT` for age, duration, campaign; `VARCHAR` for categoricals; `FLOAT` for macroeconomic indices).
-3. **Categorical Handling:** Audited missing values; retained `unknown` as a legitimate business category to prevent survivorship bias.
-4. **Feature Engineering:**
-   - **Age Grouping:** Categorized into `Under 25`, `25–34`, `35–44`, `45–54`, `55–64`, `65+`.
-   - **Campaign Contact Frequency:** Grouped outreach attempts into `1 Contact`, `2 Contacts`, `3–5 Contacts`, `6–10 Contacts`, `11+ Contacts`.
-   - **Previous Contact Recency:** Binned `pdays` into `Not Previously Contacted` (999), `0–30 Days`, `31–90 Days`, `91–180 Days`, `181+ Days`.
-   - **Consolidated Loan Status:** Combined `housing` and `loan` into `No Loan`, `Home Loan`, `Personal Loan`, `Both Loans`, and `Unknown`.
+1. **Deduplication:** Removed 12 exact duplicate records (41,188 → 41,176).
+2. **Data Types:** Validated column data types across numeric and categorical features.
+3. **Range & Category Validation:** Checked numerical boundaries and audited categorical values.
+4. **Missing Values:** Retained meaningful `unknown` categorical entries to prevent loss of relevant information.
+5. **Feature Engineering:**
+   - **Age Group:** Grouped into `Under 25`, `25–34`, `35–44`, `45–54`, `55–64`, `65+`.
+   - **Campaign Contact Group:** Grouped outreach frequency into `1 Contact`, `2 Contacts`, `3–5 Contacts`, `6–10 Contacts`, `11+ Contacts`.
+   - **Previous Contact Recency:** Grouped previous campaign contact timing into `Not Previously Contacted`, `0–30 Days`, `31–90 Days`, `91–180 Days`, `181+ Days`.
+   - **Loan Status:** Consolidated housing and personal loan details into `No Loan`, `Home Loan`, `Personal Loan`, `Both Loans`, and `Unknown`.
+6. **Standardization:** Standardized column names and performed final data-quality validation.
 
 ---
 
 ## 🗄️ 2. MySQL & SQL Analysis
 
-**Tools Used:** MySQL 8.0, MySQL Workbench  
+**Tools:** MySQL + MySQL Workbench  
 **Database:** `bank_marketing_analytics`  
-**Table:** `bank_marketing_cleaned` (41,176 rows)
+**Table:** `bank_marketing_cleaned`  
+**Records:** 41,176  
 
-### Key Analytical Queries
+### SQL Analysis Areas
+- Dataset validation, record counts, and duplicate validation
+- Subscription performance and conversion rate calculations
+- Campaign contact frequency distribution
+- Contact method performance comparison
+- Previous campaign outcomes
+- Customer characteristics (age groups, education, marital status, loan status)
+- Campaign timing and economic indicators
 
-#### 1. Baseline Conversion & Overall KPIs
+### Key SQL Queries
+
+#### Overall Campaign Conversion & Baseline Metrics
 ```sql
 SELECT 
     COUNT(*) AS total_records,
-    SUM(CASE WHEN subscribed = 'yes' THEN 1 ELSE 0 END) AS total_subscriptions,
+    SUM(CASE WHEN subscribed = 'yes' THEN 1 ELSE 0 END) AS successful_subscriptions,
     ROUND(SUM(CASE WHEN subscribed = 'yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate_pct,
-    ROUND(AVG(duration), 1) AS avg_duration_sec,
+    ROUND(AVG(duration), 1) AS avg_call_duration_sec,
     SUM(campaign) AS total_campaign_contacts
 FROM bank_marketing_cleaned;
 ```
 
-#### 2. Conversion by Contact Method
+#### Conversion Rate by Contact Method
 ```sql
 SELECT 
     contact AS contact_method,
@@ -167,7 +181,7 @@ GROUP BY contact
 ORDER BY conversion_rate_pct DESC;
 ```
 
-#### 3. Impact of Repeated Contacts (Contact Fatigue Analysis)
+#### Conversion Rate by Campaign Contact Frequency
 ```sql
 SELECT 
     CASE 
@@ -177,7 +191,7 @@ SELECT
         WHEN campaign BETWEEN 6 AND 10 THEN '6-10 Contacts'
         ELSE '11+ Contacts'
     END AS contact_frequency_tier,
-    COUNT(*) AS total_customers,
+    COUNT(*) AS total_records,
     SUM(CASE WHEN subscribed = 'yes' THEN 1 ELSE 0 END) AS subscriptions,
     ROUND(SUM(CASE WHEN subscribed = 'yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate_pct
 FROM bank_marketing_cleaned
@@ -185,11 +199,11 @@ GROUP BY contact_frequency_tier
 ORDER BY conversion_rate_pct DESC;
 ```
 
-#### 4. Prior Campaign Outcome Influence
+#### Conversion Rate by Previous Campaign Outcome
 ```sql
 SELECT 
     poutcome AS previous_outcome,
-    COUNT(*) AS customers,
+    COUNT(*) AS total_records,
     SUM(CASE WHEN subscribed = 'yes' THEN 1 ELSE 0 END) AS subscriptions,
     ROUND(SUM(CASE WHEN subscribed = 'yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate_pct
 FROM bank_marketing_cleaned
@@ -201,15 +215,17 @@ ORDER BY conversion_rate_pct DESC;
 
 ## 🐍 3. Python Analysis
 
-**Libraries:** `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy.stats`
+**Tools:** Python + Pandas + NumPy + Matplotlib + Seaborn + SciPy
 
-### Python Workflow
-1. **Exploratory Data Analysis (EDA):** Evaluated distributions, skewness, and class imbalance (11.27% target class).
-2. **Chi-Square Tests of Independence:** Confirmed statistically significant relationships between subscription and:
-   - Contact communication channel (`p < 0.001`)
-   - Previous campaign outcome (`p < 0.001`)
-   - Job category and age tier (`p < 0.001`)
-3. **Diminishing Returns Curve:** Plotted conversion probability against successive contact attempts, identifying that 84% of total conversions occur within the first 2 calls.
+Python was used as a supporting analytical layer alongside SQL and Power BI for exploratory data analysis, data validation, distribution inspection, and statistical interpretation.
+
+### Python Analysis Included
+- Dataset inspection and validation
+- Target variable distribution analysis (11.27% overall subscription rate)
+- Customer segmentation analysis
+- Contact method and previous campaign outcome comparison
+- Monthly campaign trend analysis
+- Statistical evaluation of campaign categorical variables
 
 ```python
 import pandas as pd
@@ -220,78 +236,102 @@ import seaborn as sns
 # Load cleaned dataset
 df = pd.read_csv("data/bank_marketing_cleaned.csv")
 
-# Conversion rate by contact channel
-channel_perf = df.groupby('contact')['subscribed'].apply(
-    lambda x: (x == 'yes').mean() * 100
+# Contact channel conversion rate
+channel_summary = df.groupby('contact')['subscribed'].apply(
+    lambda s: (s == 'yes').mean() * 100
 ).reset_index(name='conversion_rate_pct')
 
-print(channel_perf)
-# Output:
-#      contact  conversion_rate_pct
-# 0   cellular            14.74%
-# 1  telephone             5.23%
+print(channel_summary)
 ```
 
 ---
 
 ## 📊 4. Power BI Dashboard
 
-**Tool:** Microsoft Power BI Desktop (4 Dedicated Interactive Pages)
+**Tool:** Microsoft Power BI Desktop
 
-### Page 1: Overview
-- **KPI Ribbon:** Total Contacts (41,176), Subscriptions (4,639), Conversion Rate (11.27%), Avg Call Duration (258s), Total Outreach (105,735).
-- **Monthly Conversion Dynamics:** Peak conversions in March (50.5%), December (48.9%), September (44.9%), October (43.9%). High volume but low conversion in May (6.4%).
-- **Channel Performance:** Donut chart contrasting Cellular (14.7%) vs. Telephone (5.2%).
-- **Prior Outcome Influence:** Bar chart highlighting `success` (65.1%) vs. `nonexistent` (8.8%).
+A professional 4-page interactive Power BI dashboard was developed to communicate the analytical findings through business-focused visualizations.
 
-### Page 2: Customer Analysis
-- **Job Demographic Matrix:** Students (31.4%) and Retirees (25.2%) display highest propensity, while Blue-collar workers (6.9%) convert lowest.
-- **Age Tier Distribution:** High bimodal distribution in Young (<25: 24.0%) and Senior (65+: 45.6%) segments.
-- **Education & Marital Split:** University graduates dominate raw conversion volume; singles show higher relative subscription rates than married clients.
+### 1️⃣ Overview
+Provides a high-level view of campaign performance.
+- **Key Metrics:** Total Contacts (41,176 records), Successful Subscriptions (4,639), Conversion Rate (11.27%), Previous Contacts (7,124), Average Call Duration (258 sec)
+- **Key Visualizations:**
+  - Conversion Rate by Month
+  - Subscription Conversion Overview
+  - Conversion Rate by Contact Type (Cellular ~14.7% vs. Telephone ~5.2%)
+  - Conversion Rate by Age Group
+  - Conversion Rate by Previous Campaign Outcome (Success ~65.11%)
 
-### Page 3: Campaign Performance
-- **Repeated Contact Curve:** Steeper drop-off after 2 attempts (1 Contact: 13.0%, 2 Contacts: 11.5%, 3–5: 9.0%, 6–10: 5.8%, 11+: 2.4%).
-- **Weekday Heatmap:** Balanced weekday distribution with subtle peaks on Thursdays (12.1%) and Tuesdays (11.8%).
-- **Recency Impact:** Clients contacted within 0–30 days of prior outreach converted at 63.8%.
+### 2️⃣ Customer Analysis
+Analyzes customer characteristics and their relationship with subscription behavior.
+- **Key Areas:**
+  - Job Profile
+  - Age Groups
+  - Education Level
+  - Marital Status
+  - Housing and Personal Loans
+  - Campaign Contacts & Call Duration patterns
 
-### Page 4: Economic Insights
-- **Euribor 3-Month Benchmark:** In periods with Euribor < 1.5%, conversion surged to 23.4% compared to 5.1% during high-rate intervals (>4.5%).
-- **Macro Volatility:** Strong negative correlation between employment variation rate (`emp.var.rate`) and term deposit acceptance.
+### 3️⃣ Campaign Performance
+Evaluates campaign effectiveness and contact strategies.
+- **Key Areas:**
+  - Conversion Rate by Campaign Contacts:
+    - 1 Contact: ~13%
+    - 2 Contacts: ~11.5%
+    - 3–5 Contacts: ~10%
+    - 6–10 Contacts: ~6.5%
+    - 11+ Contacts: ~3.2%
+  - Conversion Rate by Day of Week
+  - Conversion Rate by Contact Method
+  - Conversion Rate by Previous Contacts and Recency
+  - Conversion Rate by Credit Default Status
+
+### 4️⃣ Economic Insights
+Examines campaign performance in relation to economic indicators.
+- **Key Indicators:**
+  - Euribor 3-Month Rate
+  - Employment Variation Rate
+  - Consumer Confidence Index
+  - Consumer Price Index
+  - Monthly Conversion Trends
 
 ---
 
 ## 💡 Key Business Insights
 
-1. **Massive Power of Previous Success (65.1% vs 11.3%):** Customers who previously subscribed represent the single most profitable campaign segment (~6x overall baseline).
-2. **Channel Efficiency Gap:** Cellular contacts convert at 14.7% versus 5.2% on fixed telephone lines (~2.8x efficiency).
-3. **Severe Diminishing Returns on Repeated Calling:** 
-   - 1–2 contacts generate **83.9% of all total conversions**.
-   - Beyond 3 contacts, cost-per-acquisition escalates dramatically while conversion drops from 13.0% down to 2.4%.
-4. **Niche High-Converting Age Groups:** Students (31.4%) and Retirees (65+ age: 45.6%) have lower loan obligations and higher interest in fixed deposit security.
-5. **Macroeconomic Sensitivity:** Term deposit marketing thrives during lower Euribor and stabilizing economic conditions when liquidity seeks safe bank yields.
+1. **Overall Conversion:** The campaign achieved an overall subscription rate of **11.27%** (4,639 subscriptions from 41,176 campaign records).
+2. **Previous Campaign Success:** Records with a successful previous campaign outcome showed the strongest observed conversion rate (**~65.11%**), indicating that past campaign history is an important targeting signal.
+3. **Repeated Campaign Contacts:** Conversion generally declined as campaign contact frequency increased (~13% at 1 contact down to ~3.2% at 11+ contacts), suggesting that excessive repeated outreach reduces campaign efficiency.
+4. **Contact Method:** Cellular contact performed substantially better (~14.7%) than fixed telephone contact (~5.2%) in the observed campaign data.
+5. **Customer Segments:** Conversion varied across job categories, age groups, education levels, marital status, and loan status, highlighting distinct differences across demographic segments.
+6. **Campaign Timing:** Conversion varied across months and days of the week, indicating opportunities for campaign scheduling optimization.
+7. **Economic Conditions:** Conversion varied across Euribor 3-month rate bands, employment variation levels, and consumer confidence indicators, demonstrating the value of economic context when interpreting performance.
 
 ---
 
 ## 🚨 Important Analytical Consideration
 
-### Call Duration & Pre-Contact Data Leakage
-> ⚠️ **Critical Modeling Rule:** The `duration` variable represents the length of the telemarketing call in seconds. 
+### Call Duration & Pre-Contact Targeting (Data Leakage)
+> ⚠️ **Critical Analytical Consideration:** The `duration` variable represents the length of the campaign contact in seconds.
 > 
-> Because call duration is **only known AFTER the call takes place**, it cannot be utilized as a pre-call feature for targeting or lead scoring. Models trained on call duration will exhibit synthetic, artificially inflated accuracy that immediately breaks in production.
+> Because call duration is known **only after the contact occurs**, it cannot be treated as a pre-contact targeting feature when designing predictive targeting models.
 > 
-> **Methodological Standard:** In this project, `duration` is strictly treated as a **descriptive post-campaign metric** to analyze agent engagement, never as a pre-contact predictive input.
+> Using call duration for pre-contact targeting introduces **data leakage**, resulting in unrealistically optimistic model metrics that fail in operational deployment.
+> 
+> Therefore, this project primarily uses duration for **descriptive and post-contact operational analysis**, rather than treating it as a clean pre-contact targeting variable.
 
 ---
 
 ## 📈 Strategic Business Recommendations
 
-| # | Strategic Recommendation | Implementation Mechanism | Expected Impact |
+| # | Recommendation | Implementation Focus | Expected Impact |
 |---|---|---|---|
-| **1** | **Channel Reallocation to Cellular** | Phase out fixed landline outreach; prioritize verified mobile phone numbers. | **+25% to +35%** campaign ROI |
-| **2** | **Strict Contact Frequency Cap (Max 3 Calls)** | Enforce CRM rule limiting telemarketing attempts to a hard ceiling of 3 calls per campaign. | **-35% call center costs**, zero customer fatigue |
-| **3** | **VIP Re-Engagement for Past Buyers** | Automatically queue clients with `poutcome = 'success'` into dedicated priority queues. | **~65% conversion** on repeat cohorts |
-| **4** | **Student & Retiree Tailored Products** | Formulate dedicated marketing collateral for young savers (<25) and retirement wealth preservers (65+). | **+15% conversion** in specialty segments |
-| **5** | **Macro-Conditioned Campaign Timing** | Align marketing spend with quarterly macroeconomic rate environments and avoid low-efficiency months. | **Optimized budget allocation** |
+| **1** | **Prioritize High-Performing Channels** | Prioritize cellular outreach where operationally appropriate and validate channel allocation through controlled campaign testing. | Improved contact efficiency |
+| **2** | **Manage Contact Frequency** | Establish operational guidelines to limit excessive repeated contact attempts where response declines. | Potential reduction in unnecessary repeated outreach |
+| **3** | **Leverage Previous Campaign Outcomes** | Prioritize clients with a history of successful previous campaign interactions for relevant future campaigns. | Improved targeting of responsive cohorts |
+| **4** | **Refine Customer Segmentation** | Utilize demographic variables such as age, job, and education to develop more focused campaign segments. | Improved audience relevance and segmentation |
+| **5** | **Optimize Campaign Timing** | Analyze seasonal and weekday conversion patterns to refine campaign outreach scheduling. | Better operational scheduling |
+| **6** | **Incorporate Economic Context** | Monitor economic indicators (e.g., Euribor rate, employment trends) when planning campaign timing and setting expectations. | Better contextual planning |
 
 ---
 
@@ -299,37 +339,43 @@ print(channel_perf)
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────┐
-│                        90-DAY IMPLEMENTATION ROADMAP                   │
+│                        90-DAY IMPLEMENTATION PLAN                      │
 └────────────────────────────────────────────────────────────────────────┘
 
-  Phase 1: Days 1–30         Phase 2: Days 31–60         Phase 3: Days 61–90
-  TARGETING & CADENCE        TESTING & OPTIMIZATION      SCALING & GOVERNANCE
+  Days 1–30                  Days 31–60                  Days 61–90
+  OPTIMIZE TARGETING         TEST & IMPROVE              SCALE
   ───────────────────        ──────────────────────      ────────────────────
-  • Enforce 3-call cap in    • Launch A/B split on       • Roll out model to
-    CRM / Dialer rules         Cellular vs Phone           entire regional base
-  • Automate VIP queue       • Pilot Student/Retiree     • Establish automated
-    for past successes         specialized campaigns       Power BI daily feeds
-  • Audit & scrub landline   • Evaluate day/month        • Calibrate agent KPIs
-    phone lists                timing adjustments          based on duration
+  • Identify high-performing • Test different customer   • Scale successful
+    customer segments          segments                    campaign strategies
+  • Prioritize successful    • Compare contact           • Refine customer
+    previous outcomes          strategies                  targeting
+  • Review contact method    • Evaluate campaign         • Monitor conversion &
+    performance                timing                      contact efficiency
+  • Review repeated contacts • Monitor conversion        • Build recurring
+  • Establish baseline KPIs    against baseline            Power BI reporting
 ```
 
 ### Phase Breakdown
 
-- **Days 1–30 — Optimize Targeting & Hygiene:**
-  - Audit existing lead databases; purge non-cellular numbers where possible.
-  - Establish hard system limits in CRM to cease dialing after 3 unanswered attempts.
-  - Build automated prioritization tag for past successful subscribers.
-  - Baseline daily conversion KPIs across all telemarketing shifts.
+- **Days 1–30 — Optimize Targeting:**
+  - Identify high-performing customer segments from historical data.
+  - Prioritize records with successful previous campaign outcomes.
+  - Review contact-method performance across available communication channels.
+  - Reduce unnecessary repeated contacts by setting contact frequency guidelines.
+  - Establish baseline campaign KPIs.
 
-- **Days 31–60 — Pilot & Segment Optimization:**
-  - Launch targeted telemarketing pilot on high-propensity segments (Retirees 65+, Students).
-  - Test modified script structures to optimize call duration sweet-spots (3–5 minutes).
-  - Measure interim conversion rates against 11.27% baseline.
+- **Days 31–60 — Test & Improve:**
+  - Test different customer segment strategies through pilot outreach.
+  - Compare contact strategies across communication channels.
+  - Evaluate campaign timing across high-performing days and months.
+  - Monitor conversion changes and compare performance against baseline KPIs.
 
-- **Days 61–90 — Scale & Automated Business Intelligence:**
-  - Scale validated scripts and channel rules across full regional banking footprint.
-  - Implement recurring Power BI data refreshes directly linked to data warehouse.
-  - Establish monthly executive review on macroeconomic indicators (Euribor, CPI).
+- **Days 61–90 — Scale:**
+  - Scale successful campaign strategies across broader campaign operations.
+  - Refine customer targeting rules based on pilot findings.
+  - Monitor ongoing conversion and contact efficiency.
+  - Build recurring Power BI reporting dashboards for stakeholder monitoring.
+  - Establish an ongoing campaign-performance review process.
 
 ---
 
@@ -339,59 +385,60 @@ print(channel_perf)
 bank-marketing-campaign-analytics/
 │
 ├── data/
-│   ├── README.md                          # Data dictionary & provenance
-│   └── bank_marketing_cleaned.csv         # Cleaned analytical dataset (41,176 rows)
+│   └── README.md
 │
 ├── sql/
-│   ├── README.md                          # Database architecture docs
-│   └── bank_marketing_analysis.sql        # Full MySQL analytical queries & validation
+│   ├── README.md
+│   └── bank_marketing_analysis.sql
 │
 ├── python/
-│   ├── README.md                          # Python environment & requirements
-│   └── bank_marketing_analysis.ipynb      # EDA, Chi-Square statistical tests, charts
+│   ├── README.md
+│   └── bank_marketing_analysis.ipynb
 │
 ├── powerbi/
-│   ├── README.md                          # DAX measures and page definitions
-│   └── bank_marketing_campaign_dashboard.pbix # 4-Page interactive Power BI report
+│   ├── README.md
+│   └── bank_marketing_campaign_dashboard.pbix
 │
 ├── report/
-│   ├── README.md                          # Executive brief & distribution notes
-│   └── Bank_Marketing_Campaign_Analytics_Project_Report.docx # Complete business report
+│   ├── README.md
+│   └── Bank_Marketing_Campaign_Analytics_Project_Report.docx
 │
 ├── screenshots/
-│   ├── README.md                          # Visual index
-│   ├── dashboard_overview.png             # Power BI Page 1 Overview
-│   ├── customer_analysis.png              # Power BI Page 2 Customer Analysis
-│   ├── campaign_performance.png           # Power BI Page 3 Campaign Performance
-│   └── economic_insights.png              # Power BI Page 4 Economic Insights
+│   ├── README.md
+│   ├── dashboard_overview.png
+│   ├── customer_analysis.png
+│   ├── campaign_performance.png
+│   └── economic_insights.png
 │
-└── README.md                              # Main project documentation (this file)
+└── README.md
 ```
 
 ---
 
 ## 🛠️ Tools & Technologies
 
-| Category | Tools & Libraries | Purpose in Project |
+| Category | Tools | Project Application |
 |---|---|---|
-| **Data Cleaning** | Microsoft Excel, Power Query | Initial ingestion, schema audit, deduplication, feature binning |
-| **Database** | MySQL 8.0, MySQL Workbench | Relational storage, aggregations, conditional KPIs, business validation |
-| **Programming** | Python 3.10+ | Statistical computation, distribution audits, EDA |
-| **Data Libraries** | Pandas, NumPy, SciPy | Data manipulation, Chi-square hypothesis tests, aggregations |
-| **Visualization** | Matplotlib, Seaborn | Exploratory plots, contact decay curves |
-| **Business Intelligence** | Microsoft Power BI Desktop, DAX | 4-page interactive reporting suite, executive slicers |
-| **Documentation** | GitHub Markdown, MS Word | Professional reporting, technical README, executive briefings |
+| **Data Cleaning** | Excel, Power Query | Ingestion, data type validation, deduplication, feature engineering |
+| **Database** | MySQL | Relational data storage, structured business analysis |
+| **Query Language** | SQL | Aggregations, conditional `CASE` logic, subqueries, validation queries |
+| **Programming** | Python | Exploratory data analysis, statistical checks, distributions |
+| **Data Analysis** | Pandas, NumPy | Data manipulation, grouping, statistical summaries |
+| **Visualization** | Matplotlib, Seaborn, Power BI | Visual analytics, charts, exploratory plots |
+| **Statistics** | Statistical Analysis | Validation of categorical relationships and distributions |
+| **Dashboard** | Power BI, DAX | 4-page interactive dashboard, KPI development, slicers |
+| **Documentation** | Microsoft Word, GitHub | Project report, repository README documentation |
+| **Version Control** | GitHub | Project repository management and sharing |
 
 ---
 
 ## 📚 Skills Demonstrated
 
-- **Data Wrangling:** Schema normalization, outlier evaluation, deduplication, handling non-standard values.
-- **Relational SQL:** `CASE` expressions, conditional aggregates, subqueries, group rollups, query performance.
-- **Statistical Analytics:** Class imbalance analysis, Chi-Square tests, correlation matrices, leakage mitigation.
-- **Business Intelligence & DAX:** Star schema modeling, measure formulation, interactive drill-throughs.
-- **Domain Business Acumen:** Banking term deposits, telemarketing contact fatigue, channel ROI optimization.
-- **Executive Communication:** Structured 90-day action plans, translation of analytical stats into commercial revenue levers.
+- **Data Cleaning & Validation:** Duplicate removal, schema validation, range checks, handling unknown categories.
+- **SQL Analysis:** Aggregations, conditional grouping with `CASE`, percentage calculations, exploratory queries.
+- **Exploratory Data Analysis (EDA):** Feature distribution analysis, data leakage identification, segment analysis.
+- **Business Intelligence & Reporting:** Power BI multi-page dashboard development, DAX calculations, interactive slicers.
+- **Business Insights & Communication:** Translating analytics into business takeaways, recommendations, and structured action plans.
 
 ---
 
@@ -401,11 +448,10 @@ bank-marketing-campaign-analytics/
 🎓 *B.Tech — Computer Science & Engineering*  
 🎯 *Aspiring Data Analyst*  
 
-- **Core Competencies:** SQL | Python | Power BI | Excel | MySQL | Pandas | Statistics | Data Storytelling
-- **Focus:** Transforming complex enterprise data into high-conviction commercial decisions.
+- **Skills:** SQL | Python | Power BI | Excel | MySQL | Pandas | Statistics | Data Visualization
 
 ---
 
-## ⭐ Project Support
+## ⭐ Feedback & Support
 
-If you found this project insightful or applicable to your work, please consider **starring this repository**! Feedback and suggestions are always welcome.
+If you found this project helpful or insightful, feel free to explore the repository, review the analysis, and share feedback!
